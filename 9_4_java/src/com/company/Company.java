@@ -1,28 +1,56 @@
 package com.company;
 
+import java.util.Arrays;
+
+/**
+ * @author sanye
+ * @version 1.0
+ * @date 2020/9/4 3:47 下午
+ */
 public class Company {
-    /*
-    人 老板 员工 学员
-    产品
-    部门
-    研发3个 招生3个 教学3个 后勤1个
-    每个人都有上司(除了老板)
-    完成对人和部门的增删改查
-     */
-    private Branch[] branchlist = new Branch[100];
-    private People boss = new People("阿巴阿巴",1);
-    private String name;
-    private int BranchNum = 0;
-    public void CreateBranch(String NewBranch){
-        Branch newone = new Branch(NewBranch);
-        branchlist[BranchNum] = newone;
-        BranchNum++;
-    }
-    public void Payoff(Branch one){
-        for(int i=0;i<=one.PeopleNumber;i++){
-            one.peoplelist[i].balance += one.peoplelist[i].salary;
-            System.out.println("部门"+ one.BranchName+"中的成员" + one.peoplelist[i].name +"领取了工资：" + one.peoplelist[i].salary);
-        }
+
+    public  Employee getBoss(){
+        Employee employee = new Employee();
+        employee.setEmpId("001");
+        employee.setEmpName(getCOMPANY_FOR_NAME());//上司名字
+        employee.setJob("老板");
+        employee.setPassword("123456");
+
+        return employee;
     }
 
+    public String getCOMPANY_FOR_NAME() {
+        return CompanyName;
+    }
+
+    private  Department[] department; //有多个部门
+    private  Product product; //产品
+    public String CompanyName; //公司名称
+
+
+    public Department[] getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department[] department) {
+        this.department = department;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "department=" + Arrays.toString(department) +
+                ", product=" + product +
+                '}';
+    }
 }
