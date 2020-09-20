@@ -14,7 +14,6 @@ public class SettleDemo {
         con.add(111);
         con.add(123);
         con.add(456);
-        con.addAll()
 
 
         //迭代器

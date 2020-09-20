@@ -22,7 +22,11 @@ public class MyArrayList<Item> implements Iterable<Item>{
     }
 
     public void AddAllElements(Item[] NewOne){
-        //TODO
+        int i = 0;
+        int j = index;
+        while (i< NewOne.length && j < capacity){
+            elements[++i] = NewOne[++j];
+        }
     }
 
     public boolean contain(Item item){
@@ -31,6 +35,10 @@ public class MyArrayList<Item> implements Iterable<Item>{
                 return true;
         }
         return false;
+    }
+
+    public boolean isEmpty(){
+        return index==0;
     }
 
 
