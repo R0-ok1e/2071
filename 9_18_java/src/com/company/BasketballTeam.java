@@ -46,10 +46,10 @@ public class BasketballTeam {
     }
 
     public void ChangeStarterList(List<Player> NewList){
-        //TODO
-        for(Player i:bench){
+        List<Player>  temp = starter;
+        bench.addAll(temp);
 
-        }
+
     }
 
 
